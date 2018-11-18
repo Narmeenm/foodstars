@@ -16,6 +16,10 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 gem 'devise'
+<<<<<<< HEAD
+=======
+
+>>>>>>> ed738d10ce2e78fb1552e22f4f9f484a5707aeff
 
 group :development do
   gem 'web-console', '>= 3.3.0'
