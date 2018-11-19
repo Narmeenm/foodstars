@@ -9,6 +9,7 @@ Devise.setup do |config|
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
 
+
   # config.secret_key = '49626d4df1e96c134701b4d70e5bff370b58466a4ea4cf2fdee6a891dba1f569d5d510bc072b2f39251d39ab2af6b6a2ae168a125e39c03502dcb6f9712946dc'
 
   # ==> Controller configuration
@@ -115,6 +116,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 11
 
   # Set up a pepper to generate the hashed password.
+
 
   # config.pepper = '6a0ef83818173657d560613f7195de04f560404df5624508fa0235c763089edd110ce79dae88f16e4ea33afa484f2076c1aa707fd666df459d426b03b885af2e'
 
