@@ -2,14 +2,12 @@
 <br>
 
 <ul>
-	<% @meals.each do |dose| %>
-		<li><%= meal.name %> </li>
-		<li>'Meal type'<%=type_of_food.meal%></li>
-		<li>"The location :" <%=meal.location%></li>
-		<li>"Numer of the guests:<%=meal.capacity%></li> 
-		<li>"The date: "<%=meal.date%></li>
-		<li>"Meal price" <%=meal.price%></li>
-	<% end %>
+		<li><%= @meal.name %> </li>
+		<li>'Meal type'<%=@meal.type_of_food%></li>
+		<li>"The location :" <%=@meal.location%></li>
+		<li>"Numer of the guests:<%=@meal.capacity%></li> 
+		<li>"The date: "<%=@meal.date%></li>
+		<li>"Meal price" <%=@meal.price%></li>
 </ul>
 
 <br>
