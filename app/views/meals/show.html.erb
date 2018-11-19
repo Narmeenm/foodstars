@@ -1,13 +1,21 @@
-<h1> Meals details</h1>
-<br>
 
-<ul>
-		<li><%= @meal.name %> </li>
-		<li>'Meal type'<%=@meal.type_of_food%></li>
-		<li>"The location :" <%=@meal.location%></li>
-		<li>"Numer of the guests:<%=@meal.capacity%></li> 
-		<li>"The date: "<%=@meal.date%></li>
-		<li>"Meal price" <%=@meal.price%></li>
-</ul>
 
-<br>
+
+<div class = "moredetails">
+
+
+    <div class ="meal-details">
+		<h1><%= @meal.name %> </h1>
+
+		<h2>'Meal type :'<%=@meal.type_of_food%></h2>
+		<h2>"The location :" <%=@meal.location%></li>
+		<h2>"Numer of the guests:<%=@meal.capacity%></h2>
+		<h2>"The date: "<%=@meal.date%></h2>
+		<h2>"Meal price" <%=@meal.price%><h2>
+    </div>
+
+    <div class ="meal-photo">
+		"Meal photo" <%=@meal.photo%>
+	</div>	
+
+</div>
