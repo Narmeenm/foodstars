@@ -8,7 +8,7 @@
   		<h2>"The date: "<%=@meal.date%></h2>
   		<h2>"Meal price" <%=@meal.price%></h2>
     </div>
-    <%= link_to "Book your meal!",  new_meal_booking_path(@meal.id), class: "btn btn-success"  %>
+    <%= link_to "Book your meal!",  meal_bookings_path(@meal.id), method: :post, class: "btn btn-success"  %>
   </div>
   <div class ="meal-photo" style="background-image: url(<%= image_path @meal.photo %>);">
   </div>

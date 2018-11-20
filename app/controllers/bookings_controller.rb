@@ -1,6 +1,5 @@
 class BookingsController < ApplicationController
-     before_action :set_meal, :set_user
-
+     before_action :set_meal, only: :create
 
   def index
     @bookings = Booking.all
@@ -10,22 +9,14 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
   end
 
-  def new
-    @booking = Booking.new
-  end
-
   def create
-    @booking = Booking.new(booking_params)
+    @booking = Booking.new
     @booking.meal = @meal
-    @booking.user = @user
+    @booking.user = current_user
 
 
-    if @booking.save
-      redirect_to meal_path(@meal)
-    else
-      render :new
-    end
-
+    @booking.save
+    redirect_to @booking
   end
 
   private
@@ -33,9 +24,4 @@ class BookingsController < ApplicationController
   def set_meal
     @meal = Meal.find(params[:meal_id])
   end
-
-  def set_user
-    @user = User.find(params[:user_id])
-  end
-
 end

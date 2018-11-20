@@ -63,7 +63,7 @@ meal4 = Meal.create!(
 
 meal5 = Meal.create!(
   user_id: User.first.id,
-  name: "Chilli soy salmon with wok-fried noodles",
+  name: "Chilli Soy Salmon with Wok-fried Noodles",
   location:"london",
   date: DateTime.new(2018,12,3.5),
   price:200,
