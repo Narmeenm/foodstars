@@ -1,11 +1,2 @@
 <%= render 'banner' %>
 
-
-<h1>Food Stars</h1>
-<p>please sign up to join a good </p>
-
-<% if user_signed_in? %>
-  <p>Hi, <%= current_user.email %>. Welcome!!</p>
-  <%= link_to '<button type="button">Create New Meal</button>'.new_meal_path %>
-
-<% end %>
