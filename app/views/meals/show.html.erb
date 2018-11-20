@@ -1,15 +1,24 @@
 <div class = "main">
-  <div class ="meal-details">
-  	<h1><%= @meal.name %> </h1>
-    <div class="details">
-  		<h2>'Meal type :'<%=@meal.type_of_food%></h2>
-  		<h2>"The location :" <%=@meal.location%></h2>
-  		<h2>"Numer of the guests:<%=@meal.capacity%></h2>
-  		<h2>"The date: "<%=@meal.date%></h2>
-  		<h2>"Meal price" <%=@meal.price%></h2>
+  <div class="meal-wrapper">
+    <div class ="meal-details">
+    	<h1><%= @meal.name %> </h1>
+      <div class="details">
+    		<h3><%=@meal.type_of_food%></h3>
+    		<p><%=@meal.location%></p>
+    		<p>Sits available:<%=@meal.capacity%></p>
+    		<p><%=@meal.date%></p>
+    		<p>$<%=@meal.price%></p>
+                  <%= link_to "Book your meal!",  new_meal_booking_path(@meal.id), class: "btn btn-success"  %>
+
+
+      </div>
     </div>
     <%= link_to "Book your meal!",  meal_bookings_path(@meal.id), method: :post, class: "btn btn-success"  %>
+    <div class="map"> <%= image_tag "map.jpg" %></div>
   </div>
+
+
   <div class ="meal-photo" style="background-image: url(<%= image_path @meal.photo %>);">
   </div>
+
 </div>
