@@ -1,10 +1,17 @@
 
 
+<style>
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower|Pacifico');
 
+</style>
+
+<style>
+@import url('https://fonts.googleapis.com/css?family=Acme');
+</style>
 <div class = "moredetails">
 
 
-    <div class ="meal-details">
+    <div class ="meal-details" style="background-image: url(https://images.megapixl.com/4975/49753360.jpg);">
 		<h1><%= @meal.name %> </h1>
 
 		<h2>'Meal type :'<%=@meal.type_of_food%></h2>
@@ -12,10 +19,11 @@
 		<h2>"Numer of the guests:<%=@meal.capacity%></h2>
 		<h2>"The date: "<%=@meal.date%></h2>
 		<h2>"Meal price" <%=@meal.price%><h2>
+        <button type="button" class="btn">Book Your Meal</button>
+
     </div>
 
-    <div class ="meal-photo">
-		"Meal photo" <%=@meal.photo%>
+    <div class ="meal-photo" style="background-image: url(<%= image_path @meal.photo %>);">	
 	</div>	
 
 </div>
