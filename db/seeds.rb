@@ -23,7 +23,8 @@ meal1 = Meal.create!(
   location:"Ramat Aviv",
   date: DateTime.new(2001,2,3.5),
   price:100,
-  type_of_food:"Arabic food",
+  capacity:3,
+  type_of_food:"Arabic Food",
   photo:'https://www.drweil.com/wp-content/uploads/2016/12/diet-nutrition_recipes_mediterranean-stuffed-grape-leaves_2928x2114_000005633932-1024x768.jpg'
 )
 
@@ -32,9 +33,10 @@ meal2 = Meal.create!(
   name: "Spaghetti",
   date: DateTime.new(2018,7,3.5),
   price: 70,
+  capacity:2,
   type_of_food:"Italian food",
   location:"Dezingof",
-  photo:'https://img.taste.com.au/oDClA6gT/w643-h428-cfill-…th-meatballs-and-spicy-tomato-sauce-102298-1.jpeg'
+  photo:'https://www.n-va.be/sites/default/files/styles/style_agenda_detail/public/generated/images/agenda/spaghetti_5.jpg?itok=Di4ClNDO&timestamp=1504431382'
 )
 
 meal3 = Meal.create!(
@@ -43,6 +45,7 @@ meal3 = Meal.create!(
   location:"Hawaii",
   date: DateTime.new(2018,8,3.5),
   price:150,
+  capacity:4,
   type_of_food:"Indian food",
   photo:'https://www.budgetbytes.com/wp-content/uploads/2016/06/Pressure-Cooker-Chicken-and-Rice-V2.jpg'
 )
@@ -53,7 +56,8 @@ meal4 = Meal.create!(
   location:"Haifa",
   date: DateTime.new(2019,1,3.5),
   price:200,
-  type_of_food:"Japanese dish",
+  capacity:1,
+  type_of_food:"Japanese Food",
   photo:'https://storage.hidabroot.org/Graphics/Modules/News/Pics/76582_tumb_750Xauto.jpg'
 )
 
@@ -63,6 +67,7 @@ meal5 = Meal.create!(
   location:"london",
   date: DateTime.new(2018,12,3.5),
   price:200,
+  capacity:2,
   type_of_food:"chinese food",
   photo:'https://img.taste.com.au/P9S52CJe/w643-h428-cfill-q90/taste/2016/11/chilli-soy-salmon-with-wok-fried-noodles-91891-1.jpeg'
  
@@ -74,6 +79,7 @@ meal6 = Meal.create!(
   location:"Istanbul",
   date: DateTime.new(2018,11,3.5),
   price:60,
-  type_of_food:"Arabic dishes",
+  capacity:3,
+  type_of_food:"Arabic Food",
   photo:'https://shamlola.s3.amazonaws.com/Shamlola_Images/9/src/3551f334c03154a16874e53f8c43b87c9eed48a8.jpg'
 )

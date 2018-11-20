@@ -1,1 +1,29 @@
-<%= render 'shared/card' %>
+<div class="text-center">
+  <h1 class="page-title"></h1>
+  <p class="page-description"></p>
+  <% @meals.each do |meal| %>
+	<%= link_to meal do  %>
+	  <div class="food-card">
+	    <div class="card">
+	      <div class="card-img image-ratio">
+	        <div class="ratio-inner"><%= image_tag meal.photo %></div>
+	      </div>
+	      <div class="card-content">
+	        <div class="content">
+	          <h3 class="title"><%= meal.name %></h3>
+	          <p class="description">
+	           <ul>
+	          	<li><%=meal.type_of_food%></li>
+	          	<li>The meal in <%=meal.location%></li>
+	          	<li>Seats avaliable - <%=meal.capacity%></li>
+	          	<li>Price <%=meal.price%> Nis</li>
+	          	<li>It will be on - <%=meal.date%></li>
+	           </ul>
+	          </p>
+	        </div>
+	      </div>
+	    </div>
+	  </div>
+	<% end %>
+  <% end %>
+</div>

@@ -1,5 +1,17 @@
-<%= simple_form_for [@meal] do |f| %>
-  <%= f.input :name  %>
-  <%= f.input :type_of_food  %>
-  <%= f.submit %>
-<% end %>
+<div class="container">
+	<div class="row">
+		<div class="col-xs-offset-3 col-xs-6">
+			<%= simple_form_for [@meal] do |f| %>
+			  <%= f.input :name, label: "Meal name"  %>
+			  <%= f.input :location  %>
+			  <%= f.input :type_of_food  %>
+			  <%= f.input :date  %>
+			  <%= f.input :price  %>
+			  <%= f.input :capacity, label: "Seats avaliable"  %>
+			  <%= f.submit %>
+			<% end %>
+			
+		</div>
+	</div>
+</div>
+
