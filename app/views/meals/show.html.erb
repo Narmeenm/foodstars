@@ -8,12 +8,12 @@
     		<p>Sits available:<%=@meal.capacity%></p>
     		<p><%=@meal.date%></p>
     		<p>$<%=@meal.price%></p>
-                  <%= link_to "Book your meal!",  new_meal_booking_path(@meal.id), class: "btn btn-success"  %>
 
-
+<%= link_to "Book your meal!",  meal_booking_path(@meal.id), method: :post, class: "btn btn-success"  %>
       </div>
+
     </div>
-    <%= link_to "Book your meal!",  meal_bookings_path(@meal.id), method: :post, class: "btn btn-success"  %>
+
     <div class="map"> <%= image_tag "map.jpg" %></div>
   </div>
 
