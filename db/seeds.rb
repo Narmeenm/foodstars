@@ -5,9 +5,75 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'faker'
 puts 'Cleaning database...'
 Meal.destroy_all
-Meal.create!(user_id: 1, name: "Grape Leaves",location:"Ramat Aviv", date: DateTime.new(2001,2,3.5),price:100,capacity:2, type_of_food:"Arabic", photo:"https://www.google.co.il/url?sa=i&source=images&cd=&ved=2ahUKEwjp2NmDoODeAhWCmLQKHXPmAo4QjRx6BAgBEAU&url=https%3A%2F%2Fwww.drweil.com%2Fdiet-nutrition%2Frecipes%2Fmediterranean-stuffed-grape-leaves%2F&psig=AOvVaw07PlIy2fENA8W5jTjjWUiX&ust=1542709802785584"
+
+
+  user = User.new(
+    email: Faker::Internet.safe_email,
+    password: "123456"
+  )
+  user.save!
+
+
+meal1 = Meal.create!(
+  user_id: User.first.id,
+  name: "Grape Leaves",
+  location:"Ramat Aviv",
+  date: DateTime.new(2001,2,3.5),
+  price:100,
+  type_of_food:"Arabic food",
+  photo:'https://www.drweil.com/wp-content/uploads/2016/12/diet-nutrition_recipes_mediterranean-stuffed-grape-leaves_2928x2114_000005633932-1024x768.jpg'
 )
 
-User.create!(email:"")
+meal2 = Meal.create!(
+  user_id: User.first.id,
+  name: "Spaghetti",
+  date: DateTime.new(2018,7,3.5),
+  price: 70,
+  type_of_food:"Italian food",
+  location:"Dezingof",
+  photo:'https://img.taste.com.au/oDClA6gT/w643-h428-cfill-…th-meatballs-and-spicy-tomato-sauce-102298-1.jpeg'
+)
+
+meal3 = Meal.create!(
+  user_id: User.first.id,
+  name: "CHICKEN AND RICE",
+  location:"Hawaii",
+  date: DateTime.new(2018,8,3.5),
+  price:150,
+  type_of_food:"Indian food",
+  photo:'https://www.budgetbytes.com/wp-content/uploads/2016/06/Pressure-Cooker-Chicken-and-Rice-V2.jpg'
+)
+
+meal4 = Meal.create!(
+  user_id: User.first.id,
+  name: "Sushi",
+  location:"Haifa",
+  date: DateTime.new(2019,1,3.5),
+  price:200,
+  type_of_food:"Japanese dish",
+  photo:'https://storage.hidabroot.org/Graphics/Modules/News/Pics/76582_tumb_750Xauto.jpg'
+)
+
+meal5 = Meal.create!(
+  user_id: User.first.id,
+  name: "Chilli soy salmon with wok-fried noodles",
+  location:"london",
+  date: DateTime.new(2018,12,3.5),
+  price:200,
+  type_of_food:"chinese food",
+  photo:'https://img.taste.com.au/P9S52CJe/w643-h428-cfill-q90/taste/2016/11/chilli-soy-salmon-with-wok-fried-noodles-91891-1.jpeg'
+ 
+)
+
+meal6 = Meal.create!(
+  user_id: User.first.id,
+  name: "Kubi",
+  location:"Istanbul",
+  date: DateTime.new(2018,11,3.5),
+  price:60,
+  type_of_food:"Arabic dishes",
+  photo:'https://shamlola.s3.amazonaws.com/Shamlola_Images/9/src/3551f334c03154a16874e53f8c43b87c9eed48a8.jpg'
+)
