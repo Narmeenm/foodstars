@@ -9,7 +9,7 @@
     		<p><%=@meal.date%></p>
     		<p>$<%=@meal.price%></p>
 
-<%= link_to "Book your meal!",  meal_booking_path(@meal.id), method: :post, class: "btn btn-success"  %>
+<%= link_to "Book your meal!",  meal_bookings_path(@meal.id), method: :post, class: "btn btn-success"  %>
       </div>
 
     </div>
