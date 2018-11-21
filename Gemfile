@@ -18,6 +18,9 @@ gem 'webpacker'
 gem 'devise'
 gem 'faker'
 gem "geocoder"
+gem 'cloudinary'
+gem 'carrierwave', '~> 1.2'
+
 
 
 group :development do

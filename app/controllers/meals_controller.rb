@@ -24,9 +24,11 @@ class MealsController < ApplicationController
 
 	def create
 		 @meal = Meal.new(meal_params)
+		 @meal.user_id = current_user.id
       if @meal.save
       	redirect_to meal_path(@meal)
       else
+      	
        render "new"
       end
 
@@ -40,6 +42,6 @@ class MealsController < ApplicationController
     end
 
     def meal_params
-    	params.require(:meal).permit(:name,:date,:location,:type_of_food,:price,:capacity)
+    	params.require(:meal).permit(:name,:date,:location,:type_of_food,:price,:capacity,:photo)
     end
 end
