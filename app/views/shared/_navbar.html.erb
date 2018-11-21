@@ -16,8 +16,13 @@
         <%= image_tag "add.png", height: 24 %>
       <% end %>
       <div class="navbar-wagon-item">
-        <%= image_tag("logout", height: 24)%>
+        <%= link_to destroy_user_session_path, method: :delete do %>
+            <%= image_tag "logout", height: 24 %>
+            <% end %>
+
+        </div>
       </div>
+
     <% else %>
       <!-- Login link (when logged out) -->
       <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
