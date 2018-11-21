@@ -12,6 +12,16 @@ class MealsController < ApplicationController
 
 	def show
 	   @meal = Meal.find(params[:id])
+     @meals = Meal.where.not(latitude: nil, longitude: nil)
+
+    @markers = @meals.map do |meal|
+      {
+        lng: meal.longitude,
+        lat: meal.latitude,
+        infoWindow: { content: render_to_string(partial: "/meals/map_window", locals: { meal: meal }) }
+
+      }
+    end
 	end
 
 	def create
