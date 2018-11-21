@@ -1,7 +1,8 @@
 <div class="navbar-wagon">
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <%= image_tag "logo.png", height: 50 %>
+   <h1>FoodStars</h1>
+     <%= image_tag "logo.png", height: 50 %>
   <% end %>
 
   <!-- Right Navigation -->
@@ -16,8 +17,13 @@
         <%= image_tag "add.png", height: 24 %>
       <% end %>
       <div class="navbar-wagon-item">
-        <%= image_tag("logout", height: 24)%>
+        <%= link_to destroy_user_session_path, method: :delete do %>
+            <%= image_tag "logout", height: 24 %>
+            <% end %>
+
+        </div>
       </div>
+
     <% else %>
       <!-- Login link (when logged out) -->
       <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
