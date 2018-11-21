@@ -10,13 +10,13 @@
     <% if user_signed_in? %>
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
-        <%= image_tag "notification.png", height: 30 %>
+        <%= image_tag "dashboard.png", height: 24 %>
       </div>
       <%= link_to new_meal_path, class: "navbar-wagon-item" do %>
-        <%= image_tag "add.png", height: 30 %>
+        <%= image_tag "add.png", height: 24 %>
       <% end %>
       <div class="navbar-wagon-item">
-        <%= image_tag "dashboard.png", height: 50 %>
+        <%= image_tag("logout", height: 24)%>
       </div>
     <% else %>
       <!-- Login link (when logged out) -->
