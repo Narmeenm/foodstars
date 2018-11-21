@@ -1,4 +1,4 @@
- <div class="container">
+ <div class="main">
   <h1 class="page-title"></h1>
   <p class="page-description"></p>
 
@@ -20,7 +20,7 @@
 			          	<li>The meal in <%=meal.location%></li>
 			          	<li>Seats avaliable - <%=meal.capacity%></li>
 			          	<li>Price <%=meal.price%> Nis</li>
-			          	<li>It will be on - <%=meal.date%></li>
+			          	<li>It will be on - <%=meal.date.strftime("%m/%d/%Y")%></li>
 			           </ul>
 			          </p>
 			        </div>
@@ -31,7 +31,7 @@
 		  </div>
 	  <% end %>
   </div>
- 	
+
  </div>
 
 
