@@ -1,6 +1,7 @@
 class MealsController < ApplicationController
 
 	def index
+		@meals = Meal.all - current_user.hosted_meals
     if params[:query].present?
       @meals = Meal.search_by_location_and_type_of_food(params[:query])
     else

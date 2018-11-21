@@ -13,7 +13,9 @@
         <h2><%= @meal.name %> </h2>
       </div>
         <div class="book">
-          <%= link_to "Book your meal!",  meal_bookings_path(@meal.id), method: :post, class: "btn btn-success"  %>
+          <% if (current_user && @meal.host != current_user) || !user_signed_in? %>
+            <%= link_to "Book your meal!",  meal_bookings_path(@meal.id), method: :post, class: "btn btn-success"  %>
+          <% end %>
         </div>
           <div
             id="map"
