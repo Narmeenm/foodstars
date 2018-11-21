@@ -1,8 +1,11 @@
 class MealsController < ApplicationController
 
 	def index
+    if params[:query].present?
+      @meals = Meal.search_by_location_and_type_of_food(params[:query])
+    else
 		@meals = Meal.all
-
+    end
 	end
 
 	def new
@@ -28,7 +31,7 @@ class MealsController < ApplicationController
       if @meal.save
       	redirect_to meal_path(@meal)
       else
-      	
+
        render "new"
       end
 

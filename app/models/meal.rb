@@ -5,4 +5,11 @@ class Meal < ApplicationRecord
   has_many :bookings, dependent: :destroy
   has_many :guests, through: :bookings, source: :user, dependent: :destroy
   mount_uploader :photo, PhotoUploader
+
+    include PgSearch
+  pg_search_scope :search_by_location_and_type_of_food,
+    against: [ :location, :type_of_food ],
+    using: {
+      tsearch: { prefix: true } # <-- now `superman batm` will return something!
+    }
 end
