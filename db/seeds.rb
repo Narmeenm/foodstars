@@ -11,7 +11,13 @@ Meal.destroy_all
 
 
   user = User.new(
-    email: Faker::Internet.safe_email,
+    email: "nono@gmail.com",
+    password: "123456"
+  )
+  user.save!
+
+   user = User.new(
+    email: "cory@gmail.com",
     password: "123456"
   )
   user.save!
