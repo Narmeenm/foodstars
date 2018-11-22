@@ -35,8 +35,7 @@ meal1 = Meal.new(
   date: DateTime.new(2001,2,3.5),
   price:100,
   capacity:3,
-  type_of_food:"Arabic Food",
-)
+  type_of_food:"Arabic Food")
 meal1.remote_photo_url = url
 meal1.save
 
@@ -48,8 +47,7 @@ meal2 = Meal.new(
   price: 70,
   capacity:2,
   type_of_food:"Italian food",
-  location:"Dezingof",
-)
+  location:"Dezingof")
 meal2.remote_photo_url = url
 meal2.save
 
@@ -61,8 +59,7 @@ meal3 = Meal.new(
   date: DateTime.new(2018,8,3.5),
   price:150,
   capacity:4,
-  type_of_food:"Indian food",
-)
+  type_of_food:"Indian food")
 meal3.remote_photo_url = url
 meal3.save
 
@@ -74,8 +71,7 @@ meal4 = Meal.new(
   date: DateTime.new(2019,1,3.5),
   price:200,
   capacity:1,
-  type_of_food:"Japanese Food",
-)
+  type_of_food:"Japanese Food")
 meal4.remote_photo_url = url
 meal4.save
 
@@ -87,8 +83,7 @@ meal5 = Meal.new(
   date: DateTime.new(2018,12,3.5),
   price:200,
   capacity:2,
-  type_of_food:"chinese food"
-)
+  type_of_food:"chinese food")
 meal5.remote_photo_url = url
 meal5.save
 
@@ -100,8 +95,7 @@ meal6 = Meal.new(
   date: DateTime.new(2018,11,3.5),
   price:60,
   capacity:3,
-  type_of_food:"Arabic Food",
-)
+  type_of_food:"Arabic Food")
 meal6.remote_photo_url = url
 meal6.save
 
