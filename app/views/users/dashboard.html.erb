@@ -1,17 +1,44 @@
-<h1>My Dashboard</h1>
 
+<div class="container">
+	<h1>My Dashboard</h1>
 
-<h5>Hosting:</h5>
-<ul>
-	<% @user.hosted_meals.each do |meal| %>
-		<li><%= meal.name %></li>
+	<h4>Hosting:</h4>
+	<% if @user.hosted_meals.any? %>
+		<ul>
+			<% @user.hosted_meals.each do |meal| %>
+				<li><%= meal.name %></li>
+			<% end %>
+		</ul>
+
+	<% else %>
+		<p>You are not currently hosting any meals.</p>
+		<%= link_to "Host meal", new_meal_path %>
 	<% end %>
-</ul>
 
 
-<h5>Attending:</h5>
-<ul>
-	<% @user.booked_meals.each do |meal| %>
-		<li><%= meal.name %></li>
+	<h4>Attending:</h4>
+	<% if @user.booked_meals.any? %>
+		<ul>
+			<% @user.booked_meals.each do |meal| %>
+				<li><%= meal.name %></li>
+			<% end %>
+		</ul>
+	<% else %>
+		<p>You are not currently attending any meals.</p>
+		<%= link_to "Join a meal", meals_path %>
 	<% end %>
-</ul>
+
+	<h4>Incoming Requests</h4>
+	<ul>
+		<% @user.requests.each do |booking| %>
+			<li>
+				<%= booking.user.email %>
+				<%= link_to "Confirm", confirm_booking_path(booking), method: :post, class: 'btn btn-default btn-primary' %>
+			</li>
+
+		<% end %>
+	</ul>
+	
+</div>
+
+
