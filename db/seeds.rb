@@ -7,8 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 puts 'Cleaning database...'
+Booking.destroy_all
 User.destroy_all
 Meal.destroy_all
+puts 'Cleaned database...'
 
 
   user = User.new(
@@ -22,6 +24,7 @@ Meal.destroy_all
     password: "123456"
   )
   user.save!
+  puts 'created 2 users'
 
 
 url ='https://www.drweil.com/wp-content/uploads/2016/12/diet-nutrition_recipes_mediterranean-stuffed-grape-leaves_2928x2114_000005633932-1024x768.jpg'
@@ -101,3 +104,5 @@ meal6 = Meal.new(
 )
 meal6.remote_photo_url = url
 meal6.save
+
+puts 'created 6 meals'
