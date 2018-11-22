@@ -1,44 +1,66 @@
-
 <div class="container">
 	<h1>My Dashboard</h1>
 
-	<h4>Hosting:</h4>
-	<% if @user.hosted_meals.any? %>
-		<ul>
-			<% @user.hosted_meals.each do |meal| %>
-				<li><%= meal.name %></li>
-			<% end %>
-		</ul>
 
-	<% else %>
-		<p>You are not currently hosting any meals.</p>
-		<%= link_to "Host meal", new_meal_path %>
-	<% end %>
+<div class="row">
+    <div class="col-xs-6">
+      <h3>Attending</h3>
+      <% if @user.booked_meals.any? %>
+
+          <% @user.booked_meals.each do |meal| %>
+          <div class="display">
+           <%= cl_image_tag(meal.photo, height: 100, width: 100, class: 'radius') %>
+           <%= meal.name %>, <%= meal.location %>, <%= meal.date.strftime("%m/%d/%Y") %>
+           <br>
+              <%= link_to "Show more",  meal_path(meal.id), class: "btn btn-success"  %>
+              <% if meal.bookings.first.confirmed %>
+              <p>Status: <i class="fas fa-check-circle"> (confirmed)</i></p>
+              <% else %>
+              <p>Status: <i class="fas fa-clock"> (pending) </i></p>
+              <% end %>
+          </div>
+          <% end %>
+
+      <% else %>
+        <p>You are not currently attending any meals.</p>
+        <%= link_to "Join a meal", meals_path %>
+      <% end %>
+    </div>
 
 
-	<h4>Attending:</h4>
-	<% if @user.booked_meals.any? %>
-		<ul>
-			<% @user.booked_meals.each do |meal| %>
-				<li><%= meal.name %></li>
-			<% end %>
-		</ul>
-	<% else %>
-		<p>You are not currently attending any meals.</p>
-		<%= link_to "Join a meal", meals_path %>
-	<% end %>
+    <div class="col-xs-6">
+      <h3>Hosting</h3>
+      <% if @user.hosted_meals.any? %>
+          <% @user.hosted_meals.each do |meal| %>
+            <div class="display">
+              <%= cl_image_tag(meal.photo, height: 100, width: 100, class: 'radius') %> <%= meal.name %>, <%= meal.location %>, <%= meal.date.strftime("%m/%d/%Y") %> <br>
+              <%= link_to "Show more",  meal_path(meal.id), class: "btn btn-success"  %>
+            </div>
+          <% end %>
 
-	<h4>Incoming Requests</h4>
-	<ul>
-		<% @user.requests.each do |booking| %>
-			<li>
-				<%= booking.user.email %>
-				<%= link_to "Confirm", confirm_booking_path(booking), method: :post, class: 'btn btn-default btn-primary' %>
-			</li>
+      <% else %>
+        <p>You are not currently hosting any meals.</p>
+        <%= link_to "Host meal", new_meal_path %>
+      <% end %>
+    </div>
+  </div>
 
-		<% end %>
-	</ul>
-	
+  <div class="col-xs-6">
+	<h4>Incoming Requests:</h4>
+    <% if @requests.any? %>
+    		<% @user.requests.each do |booking| %>
+          <div class="display">
+    				<%= booking.user.email %>
+    				<%= link_to "Confirm", confirm_booking_path(booking), method: :post, class: 'btn btn-default btn-primary' %>
+    		<% end %>
+    <% else %>
+    <div class="noreq"
+	     <p>You don't have any incoming requests.</p>
+     </div>
+    <% end %>
+          </div>
+
+  </div>
 </div>
 
 

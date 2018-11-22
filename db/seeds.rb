@@ -44,7 +44,7 @@ meal1.save
 
 url ='https://www.n-va.be/sites/default/files/styles/style_agenda_detail/public/generated/images/agenda/spaghetti_5.jpg?itok=Di4ClNDO&timestamp=1504431382'
 meal2 = Meal.new(
-  user_id: User.first.id,
+  user_id: User.second.id,
   name: "Spaghetti",
   date: DateTime.new(2018,7,3.5),
   price: 70,
@@ -68,7 +68,7 @@ meal3.save
 
 url ='https://storage.hidabroot.org/Graphics/Modules/News/Pics/76582_tumb_750Xauto.jpg'
 meal4 = Meal.new(
-  user_id: User.first.id,
+  user_id: User.second.id,
   name: "Sushi",
   location:"Haifa",
   date: DateTime.new(2019,1,3.5),
