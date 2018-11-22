@@ -1,5 +1,5 @@
 class MealsController < ApplicationController
-  before_action :authenticate_user!, only: [:show]
+	skip_before_action :authenticate_user!, only: [:index, :show, :new]
 
 	def index
 	    if params[:query].present?

@@ -34,7 +34,7 @@ url ='https://www.drweil.com/wp-content/uploads/2016/12/diet-nutrition_recipes_m
 meal1 = Meal.new(
   user_id: User.first.id,
   name: "Grape Leaves",
-  location:"Ramat Aviv",
+  location:"Tel Aviv tagore 53",
   date: DateTime.new(2001,2,3.5),
   price:100,
   capacity:3,
@@ -50,7 +50,7 @@ meal2 = Meal.new(
   price: 70,
   capacity:2,
   type_of_food:"Italian food",
-  location:"Dezingof")
+  location:"Tel aviv")
 meal2.remote_photo_url = url
 meal2.save
 
@@ -58,7 +58,7 @@ url = 'https://www.budgetbytes.com/wp-content/uploads/2016/06/Pressure-Cooker-Ch
 meal3 = Meal.new(
   user_id: User.first.id,
   name: "CHICKEN AND RICE",
-  location:"Hawaii",
+  location:"ben yehuda 32,tel aviv",
   date: DateTime.new(2018,8,3.5),
   price:150,
   capacity:4,
@@ -101,5 +101,18 @@ meal6 = Meal.new(
   type_of_food:"Arabic Food")
 meal6.remote_photo_url = url
 meal6.save
+
+
+url = 'https://media.timeout.com/images/103936922/630/472/image.jpg'
+meal7 = Meal.new(
+  user_id: User.first.id,
+  name: "Vegan burger",
+  location:"Allenby St 112, Tel Aviv-Yafo",
+  date: DateTime.new(2018,11,3.5),
+  price:60,
+  capacity:3,
+  type_of_food:"Zaneta")
+meal7.remote_photo_url = url
+meal7.save
 puts 'Seeding complete...'
 

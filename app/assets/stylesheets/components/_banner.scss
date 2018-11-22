@@ -16,14 +16,16 @@
 .banner p {
   font-size: 25px;
   font-weight: lighter;
-  color: #6F7E8A;
+  color: #white;
   //opacity: 0.6;
   margin-bottom: 30px;
 }
 
 .search {
   background-color: rgba(255,255,255, 0.2);
-  padding: 20px 30px;
+  padding: 10px 50px;
   border-radius: 7px;
+  width: 250px;
+  margin-left: 75px;
 
 }

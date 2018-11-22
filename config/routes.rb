@@ -5,6 +5,10 @@ Rails.application.routes.draw do
 	resources :meals do
     	resources :bookings, only: [ :show, :create]
  	end
- 	resources :bookings, only: [ :show]
+ 	resources :bookings, only: [:show] do
+ 		member do 
+ 			post :confirm
+ 		end
+	 end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
