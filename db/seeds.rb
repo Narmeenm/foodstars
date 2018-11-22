@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 puts 'Cleaning database...'
+User.destroy_all
 Meal.destroy_all
 
 
@@ -83,7 +84,7 @@ meal5 = Meal.new(
   date: DateTime.new(2018,12,3.5),
   price:200,
   capacity:2,
-  type_of_food:"chinese food" 
+  type_of_food:"chinese food"
 )
 meal5.remote_photo_url = url
 meal5.save
