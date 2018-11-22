@@ -13,7 +13,9 @@
     <% if user_signed_in? %>
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
-        <%= image_tag "dashboard.png", height: 24 %>
+        <%= link_to dashboard_path do %>
+          <%= image_tag "dashboard.png", height: 24 %>
+        <% end %>
       </div>
       <%= link_to new_meal_path, class: "navbar-wagon-item" do %>
         <%= image_tag "add.png", height: 24 %>
