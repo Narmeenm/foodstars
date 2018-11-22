@@ -18,7 +18,7 @@ gem 'webpacker'
 gem 'devise'
 gem 'faker'
 gem "geocoder"
-gem 'cloudinary','~> 1.9'
+gem 'cloudinary','~> 1.9.1'
 gem 'carrierwave', '~> 1.2'
 gem 'pg_search'
 
